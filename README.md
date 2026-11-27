@@ -60,7 +60,7 @@ All pages stay Server Components. `HostelCard` is reused on Home, Listing and Sh
 
 - **Repository:** https://github.com/talalnaeem14/hostel-finder
 - **Video demo:** <Google Drive or YouTube link, if not uploaded to the portal>
-- **Live site (Vercel, bonus):** <add after deployment>
+- **Live site (Vercel, bonus):** https://hostel-finder-eosin.vercel.app/
 
 ## AI tools used
 
