@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HostelHub: Student Hostel Finder
 
-## Getting Started
+**Course:** CS4032 Web Programming, Assignment 3 (Next.js Frontend)
+**Group number:** G__
+**Topic:** 54, Student hostel finder
 
-First, run the development server:
+## Team
+
+| Name | Roll number |
+|---|---|
+| Talal Naeem   | 24i-2053 |
+| Hassam Ali    | 24i-2115 |
+| Ahsan Arshad  | 24i-2049 |
+
+## About the app
+
+HostelHub helps students find accommodation near their campus. Users can browse hostels, search, filter and sort them, view hostel details, shortlist their favourites, and send a visit request. It is a frontend-only app built with Next.js, using mock data and React state instead of a backend.
+
+## How to run
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000. To check a production build, run `npm run build`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Routes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Route | What it shows |
+|---|---|
+| `/` | Home page with hero, featured hostels and how it works |
+| `/hostels` | Hostel listing with search, filter and sort |
+| `/hostels/[id]` | Dynamic detail page for one hostel (404 for unknown IDs) |
+| `/shortlist` | Hostels the user has saved |
+| `/visit-request` | Visit request form with validation |
+| `/about` | About the app and the team |
 
-## Learn More
+## Contributions
 
-To learn more about Next.js, take a look at the following resources:
+| Member | Pages | Components |
+|---|---|---|
+| A: Name | `/`, `/about`, `layout.tsx`, `not-found.tsx` | Navbar, Footer, Button, Hero, SectionHeading |
+| B: Name | `/hostels`, `/hostels/[id]`, `loading.tsx` | HostelCard, SearchBar, FilterPanel, HostelGallery, AmenityList, HostelsExplorer |
+| C: Name | `/visit-request`, `/shortlist` | VisitRequestForm, FormField, ConfirmationModal, FavouriteButton, ShortlistProvider |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Links
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Repository:** (paste the link from the browser address bar)
+- **Video demo:** (Google Drive or YouTube link, if the video is not uploaded to the portal)
+- **Live site (Vercel, bonus):** (add after deployment)
 
-## Deploy on Vercel
+## AI tools used
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Claude: used for planning the work split, help with project setup and Git, and code assistance. All members reviewed and can explain the code they present.
