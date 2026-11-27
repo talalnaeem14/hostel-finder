@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Hostel } from "@/types/hostel";
 import RatingBadge from "@/components/RatingBadge";
 import AmenityList from "@/components/AmenityList";
+import FavouriteButton from "@/components/FavouriteButton";
 
 interface HostelCardProps {
   hostel: Hostel;
@@ -16,7 +17,12 @@ export default function HostelCard({
   actions,
 }: HostelCardProps) {
   return (
-    <article className="flex flex-col overflow-hidden rounded-lg border bg-white shadow-sm transition hover:shadow-md">
+    <article className="relative flex flex-col overflow-hidden rounded-lg border bg-white shadow-sm transition hover:shadow-md">
+      <FavouriteButton
+        hostelId={hostel.id}
+        className="absolute right-3 top-3 z-10"
+      />
+
       <Link href={`/hostels/${hostel.id}`} className="block">
         <Image
           src={hostel.image}

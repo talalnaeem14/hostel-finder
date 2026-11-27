@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { useShortlist } from "@/components/ShortlistProvider";
 
 interface NavItem {
   href: string;
@@ -20,6 +21,7 @@ const items: NavItem[] = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const { count } = useShortlist();
 
   const linkClass = (href: string) =>
     `block rounded-md px-3 py-2 text-sm font-medium transition ${
@@ -27,6 +29,17 @@ export default function Navbar() {
         ? "bg-indigo-600 text-white"
         : "text-slate-700 hover:bg-slate-200"
     }`;
+
+  const renderLabel = (item: NavItem) => (
+    <>
+      {item.label}
+      {item.href === "/shortlist" && count > 0 && (
+        <span className="ml-1 rounded-full bg-red-500 px-2 py-0.5 text-xs text-white">
+          {count}
+        </span>
+      )}
+    </>
+  );
 
   return (
     <header className="sticky top-0 z-50 border-b bg-white">
@@ -48,7 +61,7 @@ export default function Navbar() {
           {items.map((item) => (
             <li key={item.href}>
               <Link href={item.href} className={linkClass(item.href)}>
-                {item.label}
+                {renderLabel(item)}
               </Link>
             </li>
           ))}
@@ -64,7 +77,7 @@ export default function Navbar() {
                 className={linkClass(item.href)}
                 onClick={() => setOpen(false)}
               >
-                {item.label}
+                {renderLabel(item)}
               </Link>
             </li>
           ))}
